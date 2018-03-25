@@ -176,4 +176,61 @@ public class IntBinaryTreeTest {
         assertEquals( 60, tree.getRoot().value);
     }
 
+    @Test
+    public void removingRootNodeWithRightAndLeftChild() {
+
+        IntBinaryTree tree = new IntBinaryTree()
+                .insert( 55 )
+                .insert( 22 )
+                .insert( 66 )
+                .remove( 55 );
+
+        assertEquals( 2, tree.size() );
+        assertEquals( 66, tree.find(66).get().value );
+        assertEquals( 22, tree.find(22).get().value );
+        assertEquals( 66, tree.getRoot().value);
+    }
+
+    /**
+     * Starting with :
+     *
+     *             (15)
+     *          /      \
+     *       (10)      (16)
+     *      /    \        \
+     *    (8)   (11)      (19)
+     *                       \
+     *                       (20)
+     *
+     * removing the root
+     *
+     *            (16)
+     *          /      \
+     *       (10)      (19)
+     *      /    \        \
+     *    (8)   (11)      (20)
+     *
+     */
+    @Test
+    public void removingRootNodeWithRightAndLeftChildWhenRightChildHasChildren() {
+
+        IntBinaryTree tree = new IntBinaryTree()
+                .insert( 15 )
+                .insert( 10 )
+                .insert( 8 )
+                .insert( 11 )
+                .insert( 16 )
+                .insert( 19 )
+                .insert( 20 )
+                .remove( 15 );
+
+        assertEquals( 6, tree.size() );
+        assertEquals( Optional.empty(), tree.find(15) );
+        assertEquals( 16, tree.getRoot().value);
+        assertEquals( 10, tree.find(10).get().value );
+        assertEquals( 8, tree.find(8).get().value );
+        assertEquals( 19, tree.find(19).get().value );
+        assertEquals( 20, tree.find(20).get().value );
+    }
+
 }

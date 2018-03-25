@@ -54,8 +54,7 @@ public class IntBinaryTree {
                     if ( hasNoChilderen( n ) ) {
                         if ( n == root ) {
                             root = null;
-                        }
-                        else if ( leftChildOfParent( n ) ) {
+                        } else if ( leftChildOfParent( n ) ) {
                             n.parent.left = null;
                         } else {
                             n.parent.right = null;
@@ -65,10 +64,15 @@ public class IntBinaryTree {
                     } else {
                         TreeNode leftMostNodeInSubTree = findLeftMostNodeInSubTree( n.right );
                         n.value = leftMostNodeInSubTree.value;
-                        if ( hasRightChild( leftMostNodeInSubTree ) ) {
+                        if ( n == root && hasNoChilderen( n.right ) ) {
+                            n.right = null;
+                        } else if ( n == root && hasChildren( leftMostNodeInSubTree ) ) {
+                            n.right = leftMostNodeInSubTree.right;
+                            leftMostNodeInSubTree.parent = null;
+                        } else if ( hasRightChild( leftMostNodeInSubTree ) ) {
                             leftMostNodeInSubTree.value = leftMostNodeInSubTree.right.value;
                             leftMostNodeInSubTree.right = null;
-                        } else if ( hasNoChilderen( leftMostNodeInSubTree )) {
+                        } else if ( hasNoChilderen( leftMostNodeInSubTree ) ) {
                             leftMostNodeInSubTree.parent.left = null;
                             leftMostNodeInSubTree.parent = null;
                         }
@@ -77,6 +81,10 @@ public class IntBinaryTree {
                 } );
 
         return this;
+    }
+
+    private boolean hasChildren( TreeNode node ) {
+        return !hasNoChilderen( node );
     }
 
     private boolean hasRightChild( TreeNode node ) {
