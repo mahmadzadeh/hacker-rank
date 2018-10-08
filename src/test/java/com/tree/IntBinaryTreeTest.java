@@ -1,5 +1,6 @@
-package com;
+package com.tree;
 
+import com.tree.IntBinaryTree;
 import org.junit.Test;
 
 import java.util.Optional;
