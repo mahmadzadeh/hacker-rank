@@ -1,6 +1,5 @@
-package com.caesarcipher;
+package com.easy.caesarcipher;
 
-import com.easy.caesarcipher.CaesarCipher;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

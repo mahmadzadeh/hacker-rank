@@ -1,6 +1,5 @@
-package com.hackerrankstring;
+package com.easy.hackerrankstring;
 
-import com.easy.hackerrankstring.HackerRankInString;
 import org.junit.Test;
 
 import java.util.HashMap;
