@@ -7,6 +7,7 @@ import static java.lang.Character.isUpperCase;
 
 public class CaesarCipher {
 
+
     public String encrypt( String plainTxt, int rotCount ) {
 
         StringBuffer result = new StringBuffer();
