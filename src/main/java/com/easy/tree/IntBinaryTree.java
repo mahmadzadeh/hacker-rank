@@ -1,4 +1,4 @@
-package com.tree;
+package com.easy.tree;
 
 import java.util.Optional;
 

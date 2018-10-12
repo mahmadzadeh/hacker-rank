@@ -1,5 +1,6 @@
 package com.marsmsg;
 
+import com.easy.marsmsg.MarsMsgDiff;
 import org.junit.Test;
 
 import java.util.HashMap;

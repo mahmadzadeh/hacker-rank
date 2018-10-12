@@ -1,4 +1,4 @@
-package com.hackerrankstring;
+package com.easy.hackerrankstring;
 
 import java.util.ArrayList;
 import java.util.List;

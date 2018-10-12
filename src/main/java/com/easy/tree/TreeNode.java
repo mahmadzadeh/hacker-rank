@@ -1,4 +1,4 @@
-package com.tree;
+package com.easy.tree;
 
 public class TreeNode {
     public int value;

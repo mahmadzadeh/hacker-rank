@@ -1,4 +1,4 @@
-package com.caesarcipher;
+package com.easy.caesarcipher;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.marsmsg;
+package com.easy.marsmsg;
 
 public class MarsMsgDiff {
 
